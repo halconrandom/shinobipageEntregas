@@ -1,0 +1,30 @@
+.carritoLogo{
+
+    position: relative;
+    transition: ease 0.5s;
+    left: 6px;
+    top: 160px;
+}
+
+.imgCarrito {
+
+    height: 40px;
+    width: 40px;
+    filter: invert();
+}
+.textNumber{
+
+    position: relative;
+    left: -19px;
+    top: -2px;
+
+    color: white;
+    font-family: Big;
+    font-size: 15px;
+}
+
+.carritoLogo:hover{
+
+    transform: scale(1.4);
+
+}
