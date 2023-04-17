@@ -1,0 +1,29 @@
+.logoInicio{
+
+    width: 500px;
+    height: 500px;
+
+}
+
+h1{
+    position: absolute;
+    top: 20px;
+
+    font-family: Big;
+    font-size: 60px;
+    color: white;
+}
+h3{
+
+    font-family: Big;
+    color: azure;
+    font-size: 15px;
+}
+
+.botonesHome{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}

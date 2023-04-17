@@ -1,31 +1,44 @@
 import React from "react";
 import "./NavBar.css";
-import home from "../../media/img/home.png"
-import store from "../../media/img/store.png"
-import systemLogo from "../../media/img/configuration.png"
-import CartWidget from '../CartWidget/CartWidget'
+import { NavLink, Link } from "react-router-dom";
+
+
+import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
-
   return (
     <div className="navBar">
-        <nav>
-          <ul className="navbarList">
-            <li>
-              <img className="iconListNavbar" src={home} alt="inicio" title="Inicio"/>
-            </li>
-            <li>
-              <img className="iconListNavbar" src={store} alt="tienda" title="Tienda"/>
-            </li>
-            <li>
-              <img className="iconListNavbar" src={systemLogo} alt="sistemas" title="Sistemas"/>
-            </li>
-            <li>
-              <CartWidget/>
-            </li>
-          </ul>
-        </nav>
+      <nav>
+        <ul className="navbarList">
+          <li>
+            <Link to={"/"}>
+              <img className="iconListNavbar" src="/media/img/home.png" alt="inicio" title="Inicio" />
+            </Link>
+          </li>
+          <li>
+            <NavLink to={'/Tienda'}>
+            <img
+              className="iconListNavbar"
+              src="/media/img/store.png"
+              alt="tienda"
+              title="Tienda"
+            />
+            </NavLink>
 
+          </li>
+          <li>
+            <img
+              className="iconListNavbar"
+              src="/media/img/configuration.png"
+              alt="sistemas"
+              title="Sistemas"
+            />
+          </li>
+          <li>
+            <CartWidget />
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

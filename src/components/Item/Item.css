@@ -1,0 +1,41 @@
+.cardProducto{
+
+    border: solid 1px white;
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 12px;
+    
+
+}
+
+.infoItem{
+
+    color: white;
+    font-family: Big;
+
+}
+
+.itemName{
+
+    font-size: 25px;
+
+}
+
+.priceItem{
+
+    font-family: Big;
+
+}
+
+.imgProducto{
+
+    width: 90%;
+    height: auto;
+    max-height: 120px;
+
+}
