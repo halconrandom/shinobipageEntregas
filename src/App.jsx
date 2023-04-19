@@ -1,14 +1,28 @@
+import { useState, useEffect } from "react";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
 import ContainerBackground from './components/containerBackground/ContainerBackground'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
 import Tienda from './components/Tienda/Tienda';
+import { getUnProducto } from './asyncmock';
+import InfoLateral from './components/infoLateral/InfoLateral'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 
 
 
 
 function App() {
+
+
+  const [producto, setProducto] = useState(null);
+
+  const { idItem } = useParams();
+
+  useEffect(() => {
+    getUnProducto(idItem).then((res) => setProducto(res));
+  }, [idItem]);
+
   return (
     <>
 
@@ -34,7 +48,19 @@ function App() {
           </> }/>
         <Route path="/Tienda" element={ <Tienda/> } />
         <Route path="/Tienda/categoria/:idCategoria" element={ <Tienda/> } />
-        <Route path="/Tienda/item/:idItem" element={ <Tienda/> } />
+        <Route path="/Tienda/item/:idItem" element={ 
+        
+        <>
+        
+          <Tienda/>
+          <InfoLateral>
+            <ItemDetail {...producto} />
+          </InfoLateral>
+        
+        </> 
+      
+      } />
+
       </Routes>
 
     </BrowserRouter>    
